@@ -1,1 +1,6 @@
-{}
+{
+  "projects": {
+    "default": "blank-botter",
+    "development": "blank-botter-dev"
+  }
+}
