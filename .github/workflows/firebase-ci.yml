@@ -40,7 +40,7 @@ jobs:
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
       - name: Deploy to dev env for dev branch
-        if: ${{ github.event_name == 'push' &&}}
+        if: ${{ github.event_name == 'push' }}
         uses: w9jds/firebase-action@master
         with:
           args: deploy --only functions --project blank-botter-dev
