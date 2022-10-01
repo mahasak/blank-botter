@@ -36,13 +36,13 @@ jobs:
         if: ${{ github.event_name == 'pull_request' }}
         uses: w9jds/firebase-action@master
         with:
-          args: deploy --only functions --project blank-botter
+          args: deploy --token ${{secrets.FIREBASE_TOKEN}} --only functions --project blank-botter
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
       - name: Deploy to dev env for dev branch
         if: ${{ github.event_name == 'push' }}
         uses: w9jds/firebase-action@master
         with:
-          args: deploy --only functions --project blank-botter-dev
+          args: deploy --token ${{secrets.FIREBASE_TOKEN}} --only functions --project blank-botter-dev
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
